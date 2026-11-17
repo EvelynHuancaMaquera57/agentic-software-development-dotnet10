@@ -1,0 +1,54 @@
+.header {
+  max-width: 720px;
+  margin-bottom: var(--space-header);
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-500);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gradient-brand);
+}
+
+.title {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.12;
+  color: inherit;
+}
+
+.subtitle {
+  margin-top: 1.125rem;
+  font-size: var(--fs-lg);
+  color: var(--text-muted);
+}
+
+.onDark .eyebrow {
+  color: var(--brand-300);
+}
+
+.onDark .subtitle {
+  color: var(--dark-text-muted);
+}

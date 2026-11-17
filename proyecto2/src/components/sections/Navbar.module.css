@@ -1,0 +1,123 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  color: var(--dark-text);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    backdrop-filter var(--dur) var(--ease);
+}
+
+.scrolled {
+  background: rgba(6, 10, 26, 0.78);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom-color: var(--dark-border);
+}
+
+.inner {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.link {
+  padding: 0.5rem 0.875rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--dark-text-muted);
+  border-radius: var(--radius-pill);
+  transition: color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+}
+
+.link:hover {
+  color: var(--dark-text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--dark-text);
+}
+
+.toggle:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ---- Menú móvil ---- */
+.mobile {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .links {
+    display: none;
+  }
+
+  .toggle {
+    display: inline-flex;
+  }
+
+  .mobile {
+    display: block;
+    position: fixed;
+    inset: var(--nav-height) 0 0 0;
+    background: rgba(6, 10, 26, 0.97);
+    backdrop-filter: blur(14px);
+    padding-top: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--dur) var(--ease),
+      transform var(--dur) var(--ease),
+      visibility var(--dur);
+  }
+
+  .mobileOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .mobileLink {
+    display: block;
+    padding: 1rem 0;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--dark-border);
+  }
+
+  .mobileCta {
+    margin-top: 2rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    display: none;
+  }
+}

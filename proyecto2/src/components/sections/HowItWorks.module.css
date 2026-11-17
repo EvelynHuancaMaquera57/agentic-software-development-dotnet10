@@ -1,0 +1,102 @@
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+}
+
+.top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.number {
+  position: relative;
+  z-index: 1;
+  width: 3.25rem;
+  height: 3.25rem;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--dark-bg);
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px #eef0ff;
+}
+
+/* Línea discontinua que une un paso con el siguiente */
+.connector {
+  position: absolute;
+  left: 4.5rem;
+  right: calc(-2rem - 1.25rem); /* hasta el borde de la siguiente tarjeta (padding + gap) */
+  top: 50%;
+  height: 2px;
+  background-image: linear-gradient(90deg, var(--brand-300) 50%, transparent 50%);
+  background-size: 10px 2px;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.4375rem);
+  font-weight: 700;
+  margin-bottom: 0.625rem;
+}
+
+.text {
+  flex: 1;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.deliverable {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.deliverable svg {
+  flex-shrink: 0;
+  color: var(--success-500);
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+@media (max-width: 960px) {
+  .steps {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+
+  .connector {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .step {
+    padding: 1.75rem;
+  }
+}
