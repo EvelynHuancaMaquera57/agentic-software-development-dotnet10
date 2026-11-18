@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Snap.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Snap.Tests/Snap.Tests.csproj" />
+  </Folder>
+</Solution>
